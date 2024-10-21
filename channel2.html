@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 1 - Join Telegram Channel</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #eaeaea;
+            text-align: center;
+            padding: 40px;
+            padding-top:160px;
+            padding-bottom:80px;
+            
+        }
+
+        .container {
+            background-color: #ffffff;
+            border: 2px solid #d3b03e; /* Gold border */
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            display: inline-block;
+        }
+
+        h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #d3b03e; /* Gold color */
+        }
+
+        p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            color: #777; /* Silver color for text */
+        }
+
+        .btn {
+            font-size: 20px;
+            padding: 15px 30px;
+            background-color: #d3b03e; /* Gold button */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 20px;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #c0a71c; /* Darker gold on hover */
+        }
+
+        .continue-btn {
+            display: none;
+            font-size: 20px;
+            padding: 15px 30px;
+            background-color: #c0c0c0; /* Silver button */
+            color: black;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .continue-btn:hover {
+            background-color: #a5a5a5; /* Darker silver on hover */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>TASK 2</h1>
+        <p>Join Telegram Channel</p>
+        <button class="btn" id="joinBtn">Join</button>
+        <br>
+        <button class="continue-btn" id="continueBtn">Continue</button>
+    </div>
+
+    <script>
+        // Function to open the Telegram channel
+        document.getElementById('joinBtn').addEventListener('click', function() {
+            // Open the Telegram channel link in a new tab
+            window.open('https://t.me/primative2', '_blank');
+
+            // Check if Jupitercoins already exists in localStorage
+            let coins = localStorage.getItem('Jupitercoins');
+
+            // If it exists, convert it to an integer and add 20000
+            if (coins) {
+                coins = parseInt(coins) + 20000;
+            } else {
+                // If it doesn't exist, initialize it with 20000
+                coins = 20000;
+            }
+
+            // Save the updated value back to localStorage
+            localStorage.setItem('Jupitercoins', coins);
+
+            // Show the continue button
+            document.getElementById('continueBtn').style.display = 'inline-block';
+        });
+
+        // Function to navigate to the continue page
+        document.getElementById('continueBtn').addEventListener('click', function() {
+            window.location.href = 'bot1.html';
+        });
+    </script>
+
+</body>
+</html>

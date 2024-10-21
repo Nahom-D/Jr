@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JUPITER - $JPTR</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5; /* Light background */
+            text-align: center;
+            padding: 0px;
+        }
+
+        .container {
+            background-color: #ffffff;
+            border: 3px solid #d4af37; /* Bright gold border */
+            border-radius: 15px;
+            padding: 50px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            display: inline-block;
+            margin-top: 50px;
+            width: 80%;
+            max-width: 500px;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #d4af37; /* Gold color for heading */
+        }
+
+        .coin-value {
+            font-size: 28px;
+            color: #ff4500; /* Bright orange for value display */
+            margin-bottom: 10px;
+        }
+
+        .info-text {
+            font-size: 18px;
+            color: #333333; /* Darker text */
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            font-size: 18px;
+            padding: 15px 30px;
+            background-color: #d4af37; /* Gold button */
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            margin: 10px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #b8860b; /* Darker gold on hover */
+            transform: scale(1.05); /* Scale up button on hover */
+        }
+
+        .btn-secondary {
+            background-color: #ff4500; /* Bright orange secondary button */
+        }
+
+        .btn-secondary:hover {
+            background-color: #e43d00; /* Darker orange on hover */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>JUPITER</h1>
+        <div class="coin-value">
+            <span id="jupiterCoins">0</span> $JPTR
+        </div>
+        <p class="info-text">To get a better price, invite more friends!</p>
+
+        <button class="btn" id="withdrawBtn">Withdraw</button>
+        <button class="btn btn-secondary" id="aboutUsBtn">About Us</button>
+    </div>
+
+    <script>
+        // Get the Jupitercoins value from localStorage
+        let jupiterCoins = localStorage.getItem('Jupitercoins');
+
+        // If the value exists, display it, otherwise set it to 0
+        if (jupiterCoins) {
+            document.getElementById('jupiterCoins').textContent = jupiterCoins;
+        } else {
+            localStorage.setItem('Jupitercoins', 0);
+            document.getElementById('jupiterCoins').textContent = 0;
+        }
+
+        // Redirect to the Withdraw page when the Withdraw button is clicked
+        document.getElementById('withdrawBtn').addEventListener('click', function() {
+            window.location.href = 'withdraw.html';
+        });
+
+        // Redirect to the About Us page when the About Us button is clicked
+        document.getElementById('aboutUsBtn').addEventListener('click', function() {
+            window.location.href = 'about.html';
+        });
+    </script>
+
+</body>
+</html>
